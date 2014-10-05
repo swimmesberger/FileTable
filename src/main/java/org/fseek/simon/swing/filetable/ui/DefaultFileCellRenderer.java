@@ -77,7 +77,7 @@ public class DefaultFileCellRenderer extends DefaultTableCellRenderer implements
     }
 
     @Override
-    public boolean isEditAllowed(EventObject event) {
+    public boolean isEditAllowed(JTable table, int row, int column, EventObject event) {
         return true;
     }
 }

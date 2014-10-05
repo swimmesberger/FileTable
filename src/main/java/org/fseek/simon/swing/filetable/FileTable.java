@@ -222,7 +222,7 @@ public class FileTable extends JTable {
         TableCellRenderer cellRenderer = getCellRenderer(row, column);
         if(cellRenderer instanceof XTableCellRenderer){
             XTableCellRenderer xCellRenderer = (XTableCellRenderer)cellRenderer;
-            if(!xCellRenderer.isEditAllowed(e)){
+            if(!xCellRenderer.isEditAllowed(this, row, column, e)){
                 return false;
             }
         }

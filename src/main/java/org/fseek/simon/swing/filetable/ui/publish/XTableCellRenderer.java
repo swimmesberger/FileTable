@@ -15,5 +15,5 @@ public interface XTableCellRenderer extends TableCellRenderer {
                                             boolean mouseOver, boolean lastSelected,
                                             int row, int column);
     
-    boolean isEditAllowed(EventObject event);
+    boolean isEditAllowed(JTable table, int row, int column, EventObject event);
 }

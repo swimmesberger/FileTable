@@ -18,10 +18,8 @@ package org.fseek.simon.swing.filetable.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.nio.file.Path;
-import java.util.EventObject;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultCellEditor;
 import javax.swing.ImageIcon;
@@ -56,18 +54,6 @@ public class FileTableCellEditor extends DefaultCellEditor implements TableCellE
         this.componentHolder.add(iconLbl, BorderLayout.WEST);
         this.componentHolder.add(editorComponent, BorderLayout.CENTER);
     }
-
-    @Override
-    public boolean isCellEditable(EventObject anEvent) {
-        //make sure the click was on the filename not on
-        if(anEvent instanceof MouseEvent){
-            MouseEvent mEv = (MouseEvent)anEvent;
-            return this.editorComponent.contains(mEv.getPoint());
-        }
-        return super.isCellEditable(anEvent);
-    }
-
-    
 
     @Override
     public FileIconWrapper getCellEditorValue()

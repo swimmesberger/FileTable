@@ -3,6 +3,7 @@ package org.fseek.simon.swing.filetable.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Rectangle;
 import java.awt.event.MouseEvent;
 import java.util.EventObject;
 import javax.swing.BorderFactory;
@@ -49,10 +50,12 @@ public class FileNameCellRenderer extends DefaultFileCellRenderer {
     }
     
     @Override
-    public boolean isEditAllowed(EventObject event) {
+    public boolean isEditAllowed(JTable table, int row, int column, EventObject event) {
         if(event instanceof MouseEvent){
             MouseEvent mEvt = (MouseEvent)event;
-            return this.contains(mEvt.getPoint());
+            Rectangle cellRect = table.getCellRect(row, column, true);
+            Rectangle subRect = new Rectangle(cellRect.x + this.getX(), cellRect.y + this.getY(), this.getWidth(), this.getHeight());
+            return subRect.contains(mEvt.getPoint());
         }
         return true;
     }
