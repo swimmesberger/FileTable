@@ -59,3 +59,5 @@ $RECYCLE.BIN/
 *.msp
 /.nb-gradle
 /.gradle
+/.build
+/.libs
