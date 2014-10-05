@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
  * @author Simon Wimmesberger
  */
 public class I18nData {
-    private static final String[] INIT_BUNDLES = {"org/fseek/simon/swing/filetable/i18n/resources/filetable"};
+    private static final String[] INIT_BUNDLES = {"org/fseek/simon/swing/filetable/i18n/filetable"};
     
     private static List<ResourceBundle> bundles;
     
